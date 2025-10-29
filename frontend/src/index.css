@@ -1,0 +1,65 @@
+/*
+* GLOBAL STYLES
+*/
+
+/* Define the subtle zoom animation for the background */
+@keyframes background-zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.03);
+    }
+}
+
+html {
+    /* Ensure full height */
+    min-height: 100%;
+}
+
+body {
+    /* Reset defaults and ensure full height */
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* ADDED: Set a solid dark fallback background color */
+    background-color: #111827; 
+}
+
+/* * FIX: Applying the background directly to the body/html guarantees visibility 
+ * if the React element (#root) fails, but since the React component already 
+ * sets a background, we will target #root and ensure the URL is visible.
+ * * NOTE: The React component *also* sets a background image style inline. 
+ * This CSS should act as the primary theme container.
+ */
+#root {
+    min-height: 100vh;
+    width: 100%;
+    
+    /* Stronger, more reliable URL with Pink/Purple tones */
+    /* If this still fails, the problem is your network blocking Unsplash domains */
+    background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') !important;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Apply the smooth animation */
+    animation: background-zoom 30s alternate infinite;
+}
+
+/* Custom Scrollbar Styling (VIBRANT PINK/FUCHSIA ACCENT) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    /* Vibrant Pink accent color for the thumb */
+    background-color: #ec4899; /* Tailwind Pink-500 */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    /* Very dark track color to enhance the Pink */
+    background-color: #4f994a; /* Dark Blue/Black */
+}
