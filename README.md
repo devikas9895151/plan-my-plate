@@ -76,7 +76,3 @@ We love collaboration! If you have ideas for new features or bug fixes, please o
 
 ---
 
-## 👋 Contact
-
-* **Project Link:** [https://github.com/your-username/my-plan-my-plate](https://github.com/devikas9895151/my-plan-my-plate)
-* 
